@@ -6,7 +6,7 @@ const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plug
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // 设置node环境变量,决定browserlist使用那个环境
-process.env.NODE_ENV = production;
+process.env.NODE_ENV = 'production';
 // 复用loader
 const commonCssLoader = [
   // 让js中的css单独成文件
@@ -64,10 +64,10 @@ module.exports = {
         // }
 
         /*
-                              正常来讲，一个文件只能被一个loader处理，
-                              当一个文件被多个loader处理，一定要指定loader执行的先后顺序，
-                              先执行eslint  在执行babel
-                              */
+                                  正常来讲，一个文件只能被一个loader处理，
+                                  当一个文件被多个loader处理，一定要指定loader执行的先后顺序，
+                                  先执行eslint  在执行babel
+                                  */
         test: /\.js$/,
         exclude: /node_modules/,
         // 优先执行
@@ -85,7 +85,7 @@ module.exports = {
         options: {
           presets: [
             [
-              '@babel-preset-env',
+              '@babel/preset-env',
               {
                 useBuiltIns: 'usage',
                 corejs: {
